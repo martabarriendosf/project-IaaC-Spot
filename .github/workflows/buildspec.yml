@@ -47,6 +47,7 @@ jobs:
           ec2_security_group_id: ${{ env.EC2_SECURITY_GROUP_ID }}
           ec2_instance_ttl: ${{ env.EC2_INSTANCE_TTL }}
           ec2_spot_instance_strategy: ${{ env.EC2_SPOT_INSTANCE_STRATEGY }}
+          ec2_instance_tags: '{"Name":"MyEC2Instance","Environment":"Production"}'
 
   run-build:
     runs-on: self-hosted
