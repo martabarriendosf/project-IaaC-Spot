@@ -19,7 +19,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
       AWS_REGION: "us-east-1"
       EC2_INSTANCE_TYPE: "c5.4xlarge"
-      EC2_AMI_ID: "ami-008fe2fc65df48dac"
+      EC2_AMI_ID: "ami-04fb1f1655deb8bb8"
       EC2_SUBNET_ID: "subnet-015014d9e9bfd7242"
       EC2_SECURITY_GROUP_ID: "sg-04137bc46731e526b"
       EC2_INSTANCE_TTL: 40                # Optional (default is 60 minutes)
