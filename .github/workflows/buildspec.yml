@@ -79,7 +79,7 @@ jobs:
           terraform --version
 
       - name: Terraform Init
-        run: terraform init -backend-config="bucket=${{ env.AWS_S3_BUCKET }}" -backend-config="key=terraform.tfstate" -backend-config="region=${{ env.AWS_DEFAULT_REGION }}"
+        run: terraform init 
 
       - name: Terraform Apply
         run: terraform destroy -auto-approve
