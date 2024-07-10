@@ -67,6 +67,10 @@ jobs:
           sudo yum -y update glibc
           sudo yum -y install glibc
 
+      - name: Install Node.js
+        run: |
+          sudo yum -y install nodejs
+
       - name: Checkout Repo
         uses: actions/checkout@v2
 
