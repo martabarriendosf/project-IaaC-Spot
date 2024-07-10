@@ -57,20 +57,13 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
       AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
       AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+      ACTIONS_RUNNER_FORCED_INTERNAL_NODE_VERSION: "node16"
+      ACTIONS_RUNNER_FORCE_ACTIONS_NODE_VERSION: "node16"
 
     needs: start-runner
 
     steps:
           
-      - name: Install glibc
-        run: |
-          sudo yum -y update glibc
-          sudo yum -y install glibc
-
-      - name: Install Node.js
-        run: |
-          sudo yum -y install nodejs
-
       - name: Checkout Repo
         uses: actions/checkout@v2
 
