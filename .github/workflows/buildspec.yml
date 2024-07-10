@@ -61,6 +61,12 @@ jobs:
     needs: start-runner
 
     steps:
+          
+      - name: Install glibc
+        run: |
+          sudo yum -y update glibc
+          sudo yum -y install glibc
+
       - name: Checkout Repo
         uses: actions/checkout@v2
 
@@ -70,12 +76,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
-          
-      - name: Install glibc
-        run: |
-          sudo yum -y update glibc
-          sudo yum -y install glibc
-
+      
       - name: Install Terraform
         run: |
           sudo yum install -y yum-utils
