@@ -68,7 +68,7 @@ resource "aws_security_group" "ec2_security_group" {
   }
 
   tags = {
-    Name = "ec2 security group 2"
+    Name = "ec2 security group"
   }
 }
 
