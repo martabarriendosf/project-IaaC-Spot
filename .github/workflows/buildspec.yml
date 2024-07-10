@@ -18,7 +18,7 @@ jobs:
       AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOY_AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
       AWS_REGION: "us-east-1"
-      EC2_INSTANCE_TYPE: "m6g.medium" # Graviton
+      EC2_INSTANCE_TYPE: "m6g.medium,m6g.large,m6g.xlarge" # # List of Graviton instance types
       EC2_AMI_ID: "ami-0c28e91ac1000b456" #AMI ARM Amazon Linux
       EC2_SUBNET_ID: "subnet-015014d9e9bfd7242"
       EC2_SECURITY_GROUP_ID: "sg-04137bc46731e526b"
@@ -84,4 +84,4 @@ jobs:
         run: terraform init
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        run: terraform destroy -auto-approve
